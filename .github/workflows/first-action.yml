@@ -54,7 +54,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Creating file
-        run: echo "Hello world!!! > output.txt
+        run: echo "Hello world!!! > output.txt"
       - name: Uploading the artifact
         uses: actions/upload-artifact@v4
         with:
