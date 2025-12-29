@@ -13,6 +13,12 @@ jobs:
           node-version: 18
       - name: Node verify
         run: node -v
+      - name: Install dependencies
+        run: npm install
+      - name: Run build
+        run: npm run build
+      - name: Run test
+        run: npm test
       - name: Step:1 Say Hello
         run: echo "Hello Github Actions"
       - name: Step:2 List files
