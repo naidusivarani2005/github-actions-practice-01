@@ -1,0 +1,10 @@
+name: My First GitHub Action
+
+on:
+  push:
+
+jobs:
+  hello-job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello 👋 GitHub Actions is working!"
