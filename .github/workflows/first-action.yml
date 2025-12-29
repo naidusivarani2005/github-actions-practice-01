@@ -5,9 +5,11 @@ jobs:
   hello-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Step:1 Say Hello
+      - name: Step:1 Checkout code
+        uses: actions/checkout@v4
+      - name: Step:2 Say Hello
         run: echo "Hello Github Actions"
-      - name: Step:2 List files
+      - name: Step:3 List files
         run: ls
-      - name: Step:3 Current Location
+      - name: Step:4 Current Location
         run: pwd
