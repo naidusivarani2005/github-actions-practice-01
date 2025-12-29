@@ -17,3 +17,19 @@ jobs:
         run: npm install
       - name: Run test
         run: npm test
+  build-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code Chekout
+        uses: actions/checkout@v4
+      - name: Setup Nodejs
+        uses: actions/setup-node@v4
+        with: 
+          node-version: 18
+      - name: Verify node is available or not
+        run: node -v
+      - name: Install dependencies
+        run: npm install
+      - name: Run build
+        run: npm run build
+      
