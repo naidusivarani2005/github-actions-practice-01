@@ -1,10 +1,13 @@
 name: My First GitHub Action
-
 on:
   push:
-
 jobs:
   hello-job:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello 👋 GitHub Actions is working!"
+      - name: Step:1 Say Hello
+        run: echo "Hello Github Actions"
+      - name: Step:2 List files
+        run: ls
+      - name: Step:3 Current Location
+        run: pwd
