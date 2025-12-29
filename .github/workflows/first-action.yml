@@ -5,11 +5,17 @@ jobs:
   hello-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Step:1 Checkout code
+      - name: Checkout code
         uses: actions/checkout@v4
-      - name: Step:2 Say Hello
+      - name: Set up Nodejs
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Node verify
+        run: node -v
+      - name: Step:1 Say Hello
         run: echo "Hello Github Actions"
-      - name: Step:3 List files
+      - name: Step:2 List files
         run: ls
-      - name: Step:4 Current Location
+      - name: Step:3 Current Location
         run: pwd
