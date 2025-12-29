@@ -1,27 +1,19 @@
-name: My First GitHub Action
+name: My First GitHub Actions Workflow
 on:
   push:
 jobs:
-  hello-job:
+  test-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Code Chekout
         uses: actions/checkout@v4
-      - name: Set up Nodejs
+      - name: Setup Nodejs
         uses: actions/setup-node@v4
-        with:
+        with: 
           node-version: 18
-      - name: Node verify
+      - name: Verify node is available or not
         run: node -v
       - name: Install dependencies
         run: npm install
-      - name: Run build
-        run: npm run build
       - name: Run test
         run: npm test
-      - name: Step:1 Say Hello
-        run: echo "Hello Github Actions"
-      - name: Step:2 List files
-        run: ls
-      - name: Step:3 Current Location
-        run: pwd
