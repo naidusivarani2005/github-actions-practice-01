@@ -2,7 +2,7 @@
   "name": "github-actions-demo",
   "version": "1.0.0",
   "scripts": {
-    "build": "echo build",
+    "build": "echo Build Success",
     "test": "echo Tests passed"
   }
 }
