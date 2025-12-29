@@ -50,4 +50,26 @@ jobs:
        run: |
          echo "Application name is $APP_NAME"
          echo "Environment is $Environment"
+  artifact-upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Creating file
+        run: echo "Hello world!!! > output.txt
+      - name: Uploading the artifact
+        uses: actions/artifact-upload@v4
+        with:
+          name: build-output
+          path: output.txt
+  artifact-download:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Downloading the artifact
+        uses: actions/artifact-download@v4
+        with:
+          name: build-output
+
+      - name: Read file
+        run: cat output.txt
+         
       
