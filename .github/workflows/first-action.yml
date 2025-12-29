@@ -33,4 +33,10 @@ jobs:
         run: npm install
       - name: Run build
         run: npm run build
+  secret-job:
+   needs: build-job
+   runs-on: ubuntu-latest
+   steps:
+     - name: Get Secret from Github Secrets
+       run: echo "Secret value is ${{ secrets.MY_SECRET_MESSAGE }}
       
