@@ -56,7 +56,7 @@ jobs:
       - name: Creating file
         run: echo "Hello world!!! > output.txt
       - name: Uploading the artifact
-        uses: actions/artifact-upload@v4
+        uses: actions/upload-artifact@v4
         with:
           name: build-output
           path: output.txt
@@ -65,7 +65,7 @@ jobs:
     
     steps:
       - name: Downloading the artifact
-        uses: actions/artifact-download@v4
+        uses: actions/download-artifact@v4
         with:
           name: build-output
 
