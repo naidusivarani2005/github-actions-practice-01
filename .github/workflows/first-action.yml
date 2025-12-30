@@ -1,6 +1,9 @@
 name: My First Github actions Workflow
 on:
   push:
+env:
+  APP_NAME: Github Actions Demo
+  ENVIRONMENT: Development
 jobs:
   test-job:
     runs-on: ubuntu-latest
@@ -39,3 +42,11 @@ jobs:
     steps:
       - name: Fetching Secrets
         run: echo "Secret value is ${{ secrets.MY_SECRET_MESSAGE }}"
+  env-job:
+    runs-on: ubuntu-latest
+    needs: secret-job
+    steps:
+      - name: Fetching environment values
+        run: |
+          echo "Application name is $APP_NAME"
+          echo "Environment is $ENVIRONMENT"
