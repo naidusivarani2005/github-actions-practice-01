@@ -18,6 +18,20 @@ jobs:
         run: node -v
       - name: Code test
         run: npm test
-      - name: Test result
+      - name: Test status
         run: echo "Test Passed"
-         
+  build-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code checkout
+        uses: actions/checkout@v4
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Verify node
+        run: node -v
+      - name: Code build
+        run: npm run build
+      - name: Build status
+        run: echo "Build Success"         
