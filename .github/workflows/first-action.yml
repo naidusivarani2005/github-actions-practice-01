@@ -2,11 +2,15 @@ name: My First Github actions Workflow
 on:
   push:
 jobs:
-  checkout-job:
+  hello-job:
     runs-on: ubuntu-latest
     steps:
      - name: Code checkout
        uses: actions/checkout@v4
-     - name: List files
-       run: ls
+     - name: Setup node
+       uses: actions/setup-node@v4
+       with:
+         node-version: 18
+     - name: Verify node
+       run: node -v
      
