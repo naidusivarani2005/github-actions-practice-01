@@ -45,4 +45,4 @@ jobs:
     needs: environment-job
     steps:
      - name: Reading Secret variables
-       run: echo "My Secret message is ${{ MY_SECRET_MESSAGE }}
+       run: echo "My Secret message is ${{ MY_SECRET_MESSAGE }}"
