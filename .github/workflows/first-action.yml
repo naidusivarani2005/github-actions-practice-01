@@ -5,12 +5,16 @@ jobs:
   hello-job:
     runs-on: ubuntu-latest
     steps:
-     - name: Code checkout
+     - name: Step-1  Code checkout
        uses: actions/checkout@v4
-     - name: Setup node
+     - name: Step-2 Setup node
        uses: actions/setup-node@v4
        with:
          node-version: 18
-     - name: Verify node
+     - name: Setp-3  Verify node
        run: node -v
+     - name: Step-4 Install dependencies
+       run: npm install
+     - name: Step-5 Run code test
+       run: npm test
      
