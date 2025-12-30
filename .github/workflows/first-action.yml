@@ -38,4 +38,4 @@ jobs:
     needs: build-job
     steps:
       - name: Fetching Secrets
-        uses: echo "Secret value is ${{ MY_SECRET_MESSAGE }}"
+        run: echo "Secret value is ${{ MY_SECRET_MESSAGE }}"
