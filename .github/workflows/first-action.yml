@@ -2,7 +2,7 @@ name: My First Github actions Workflow
 on:
   push:
 jobs:
-  hello-job:
+  test-job:
     runs-on: ubuntu-latest
     steps:
      - name: Step-1  Code checkout
@@ -17,4 +17,18 @@ jobs:
        run: npm install
      - name: Step-5 Run code test
        run: npm test
-     
+  build-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step-1  Code checkout
+        uses: actions/checkout@v4
+      - name: Step-2 Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Setp-3  Verify node
+        run: node -v
+      - name: Step-4 Install dependencies
+        run: npm install
+      - name: Step-5 Code build
+        run: npm run build
