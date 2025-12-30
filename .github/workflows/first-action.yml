@@ -18,8 +18,6 @@ jobs:
         run: node -v
       - name: Code test
         run: npm test
-      - name: Test status
-        run: echo "Test Passed"
   build-job:
     runs-on: ubuntu-latest
     needs: test-job
@@ -33,6 +31,11 @@ jobs:
       - name: Verify node
         run: node -v
       - name: Code build
-        run: npm run build
-      - name: Build status
-        run: echo "Build Success"         
+  environment-job:
+    runs-on: ubuntu-latest
+    needs: build-job
+    steps:
+     - name: Reading Environment variables
+       run: |
+        echo "Appliction name is $APP_NAME"
+        echo "Environment is $ENVIRONMENT"
